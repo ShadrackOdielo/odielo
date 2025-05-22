@@ -15,7 +15,7 @@ jobs:
         with:
           version: latest
       - uses: actions/checkout@v4
-      - run: pnpm i && pnpm run generate
+      - run: pnpm i && pnpm approve-builds && pnpm run generate
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
