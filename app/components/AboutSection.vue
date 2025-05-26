@@ -1,19 +1,19 @@
 <script setup lang="ts">
 </script>
 <template>
-<UCard id="about" class="relative" :ui="{body:'flex md:flex-row flex-col' , header:'bg-white'}" >
+<UCard id="about" class="relative rounded-none ring-0" :ui="{body:'flex md:flex-row flex-col' , header:'px-2 ring-0'}" >
     <template #header>
         <!-- a large greyed out background text and smaller darker overlay -->
-        <div class="relative inset-0 flex items-center justify-center">
-            <h1 class="text-9xl text-gray-300 font-bold opacity-20">About Me</h1>
-            <h1 class="text-6xl text-gray-800 left-10 font-bold">About Me</h1>
+        <div class="relative w-full inset-0 flex items-center justify-center">
+            <h1 class="md:text-9xl text-6xl  font-bold opacity-20">About Me</h1>
+            <h1 class="md:text-3xl text-xl absolute font-bold text-center">About Me</h1>
         </div>
         </template> 
     <div class="flex justify-center items-center w-full md:w-1/2 p-4">
-                <img src="/images/face.jpg" alt="About Me" class="w-48 h-auto rounded-lg shadow-lg">
+                <img src="/images/face.jpg" alt="About Me" class="w-96 h-auto hover:grayscale rounded-lg shadow-lg">
         </div>       
     <div class="container mx-auto md:w-1/2 px-4">
-            <h2 class="text-3xl font-bold  mb-6">About Me</h2>
+            <h2 class="text-3xl font-bold underline  mb-6">Who am I?</h2>
             <p class="text-lg mb-4">
                 I am a passionate web developer with a focus on creating beautiful and functional websites.
                 My journey in web development started with a curiosity about how websites work, and it has grown into a full-fledged career.

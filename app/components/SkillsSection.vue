@@ -1,23 +1,60 @@
 <script setup lang="ts">
+// a list of icons representing programming languages, frameworks, and tools[tailwind,nuxt 3,vue 3,supabase,html5,js,ts,css3,vscode,figma,canva,git,github,linux,sql] I use from the logos library, and their names for the tooltips
+const skillIcons = 
+    [
+        { icon: 'i-logos-tailwindcss', name: 'Tailwind CSS' },
+        { icon: 'i-logos-nuxt-icon', name: 'Nuxt 3' },
+        { icon: 'i-logos-vue', name: 'Vue 3' },
+        { icon: 'i-logos-supabase', name: 'Supabase' },
+        { icon: 'i-logos-html-5', name: 'HTML5' },
+        { icon: 'i-logos-javascript', name: 'JavaScript' },
+        { icon: 'i-logos-typescript-icon', name: 'TypeScript' },
+        { icon: 'i-logos-css-3', name: 'CSS3' }
+    ];
 </script>
 <template>
-    <section id="skills" class=" py-20 min-h-screen">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-6">My Skills</h2>
-            <p class="text-lg mb-4">
-                I have a diverse set of skills that I have developed over the years. 
-                My expertise includes web development, UI/UX design, and performance optimization.
-            </p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li>HTML, CSS, JavaScript</li>
-                <li>Vue.js, React</li>
-                <li>Node.js, Express</li>
-                <li>Responsive Design</li>
-                <li>Performance Optimization</li>
-            </ul>
-            <div class="mt-8">
-                <img src="/images/test.jpg" alt="Skills" class="w-full h-auto rounded-lg shadow-lg">
-            </div>
+<UCard id="skills" class="relative  rounded-none ring-0" :ui="{body:'flex md:flex-row flex-col gap-4' , header:'px-2 '}" >
+    <template #header>
+        <!-- a large greyed out background text and smaller darker overlay -->
+        <div class="relative w-full inset-0 flex items-center justify-center">
+            <h1 class="md:text-9xl text-6xl  font-bold opacity-20">Skills</h1>
+            <h1 class="md:text-3xl text-xl absolute font-bold text-center">Tools I use</h1>
         </div>
-    </section>
+        </template> 
+        <UCard class="w-full">
+            <template #header>
+                <h1>Skills</h1>
+            </template>
+            <div class="flex flex-col ">
+                <UButton
+                v-for="skill in skillIcons"
+                    :key="skill.name"
+                    block
+                    variant="ghost"
+                    color="neutral"
+                    :icon="skill.icon"
+                    :label="skill.name"
+                />
+        </div></UCard>
+        <UCard class="w-full ring-0" >
+            <template #header>
+                <h1>Tools I use</h1>
+            </template>
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                
+                <UTooltip
+                    v-for="skill in skillIcons"
+                    :key="skill.name"
+                    color="neutral"
+                    :text="skill.name"
+                    >
+                    <UIcon
+                        :name="skill.icon"
+                        class="text-4xl w-20 h-20 hover:text-primary transition-colors duration-300"
+                        />
+                </UTooltip>
+            </div>
+        </UCard>
+        
+</UCard> 
 </template>

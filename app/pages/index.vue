@@ -19,7 +19,7 @@
     <!-- Background Section -->
     <BackgroundSection />
 
-   
+   <ContactSection />
    
   </div>
 </template>

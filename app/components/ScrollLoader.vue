@@ -24,7 +24,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <a class="scroll-top  " href="#">
+  <a class="scroll-top z-99  " href="#">
     <!-- Here you can place an icon, for example -->
     <UIcon name="i-heroicons-arrow-up-solid" class="text-2xl" />
     <svg class="scroll-top__circle" viewBox="0 0 40 40">
@@ -46,7 +46,7 @@ onMounted(() => {
   width: var(--size);
   height: var(--size);
   color: var(--color-neutral);
-  background-color: var(--bg-elevated);
+  background-color: var(--bg-secondary);
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-decoration: none;

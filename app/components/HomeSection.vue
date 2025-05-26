@@ -40,33 +40,50 @@ onMounted(() => {
 <template>
   <section
     id="home"
-    class="relative w-full h-screen bg-[url(/images/test.jpg)] bg-cover bg-center flex flex-col items-center justify-center px-4 text-center"
-  >
-    <div class=" p-6 rounded-lg max-w-xl w-full">
+    class="relative w-full h-screen bg-[url(/images/test.jpg)]  bg-cover bg-no-repeat top-0 flex flex-col items-center justify-center  px-4 text-center"
+  ><div class="absolute flex flex-col items-center justify-center text-center inset-0 backdrop-brightness-50 backdrop-blur-sm">
+    <div class=" p-6 rounded-lg max-w-xl  w-full">
+      <img
+        src="/images/home.jpg"
+        alt="Shadrack Odielo"
+        class="w-24 h-24  rounded-full grayscale  mx-auto mb-4 ring-4 ring-bg  shadow-lg"
+      >
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold  mb-4">
-        shadrack odielo
+        Shadrack Odielo
       </h1>
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-6">
-        <span>{{ currentText }}</span><span class="border-r-2 border-white animate-pulse ml-1"></span>
+        <span>{{ currentText }}</span><span class="border-r-2 border-white animate-pulse ml-1"/>
       </h2>
-      <a
-        href="#contact"
-        class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition"
-      >
-        Contact Me
-      </a>
+      <p class="text-lg sm:text-xl md:text-2xl  mb-8">
+        I am a passionate web developer, writer, and designer.
+      </p>
+      <div class="flex justify-center space-x-4">
+        <UButton
+          color="neutral"
+          variant="solid"
+          href="#about"
+        >
+          About Me
+        </UButton>
+        <UButton
+          color="secondary"
+          variant="outline"
+          href="#portfolio"
+        >
+          My Portfolio
+        </UButton>
+        </div>
     </div>
-
-    <a
+<UTooltip
+      text="Scroll down to learn more"
+      placement="top">
+    <UButton
+      icon="i-heroicons-arrow-down-solid"
+      class="absolute bottom-4 rounded-full animate-bounce"
+      color="neutral"
+      variant="ghost"
       href="#about"
-      class="absolute bottom-8 animate-bounce text-white"
-      aria-label="Scroll down"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M19 9l-7 7-7-7"/>
-      </svg>
-    </a>
+    /></UTooltip>
+    </div>
   </section>
 </template>

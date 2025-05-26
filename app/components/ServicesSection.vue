@@ -1,23 +1,43 @@
 <script setup lang="ts">
+
+// a list of services i provide, icons and descriptions
+const jobs = [
+    {
+        title: 'Web Development',
+        description: 'Building responsive and modern websites using the latest technologies.',
+        icon: 'i-lucide-code'
+    },
+    {
+        title: 'UI/UX Design',
+        description: 'Creating user-friendly interfaces and experiences that delight users.',
+        icon: 'i-lucide-palette'
+    },
+    {
+        title: 'SEO Optimization',
+        description: 'Improving website visibility and ranking on search engines.',
+        icon: 'i-lucide-search'
+    },
+    {
+       title: 'copywriting',
+        description: 'Crafting compelling content that engages and converts visitors.',
+        icon: 'i-lucide-edit-2'
+    }
+];
 </script>
 <template>
-    <section id="services" class="py-20 min-h-screen">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-6">My Services</h2>
-            <p class="text-lg mb-4">
-                I offer a range of web development services to help you build your online presence.
-                Whether you need a simple website or a complex web application, I can help you achieve your goals.
-            </p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li>Web Development</li>
-                <li>UI/UX Design</li>
-                <li>Responsive Design</li>
-                <li>Performance Optimization</li>
-                <li>SEO Services</li>
-            </ul>
-            <div class="mt-8">
-                <img src="/images/test.jpg" alt="Services" class="w-full h-auto rounded-lg shadow-lg">
-            </div>
+<UCard id="services" class="relative  rounded-none ring-0" :ui="{body:'flex md:flex-row flex-col gap-4' , header:'px-2 '}" >
+    <template #header>
+        <!-- a large greyed out background text and smaller darker overlay -->
+        <div class="relative w-full inset-0 flex items-center justify-center">
+            <h1 class="md:text-9xl text-6xl  font-bold opacity-20">Services</h1>
+            <h1 class="md:text-3xl text-xl absolute font-bold text-center">What I Do</h1>
         </div>
-    </section>
+        </template> 
+           <UCard v-for="service in jobs"  :key="service.title" class=" flex flex-col  items-center r text-center h-full shadow-lg">
+                <template #header>
+                   <UButton variant="ghost" block color="neutral" :icon="service.icon" :label="service.title" class="text-2xl mb-4" />
+                </template>
+                <p class="text-lg">{{ service.description }}</p>
+            </UCard>
+</UCard> 
 </template>
