@@ -50,20 +50,46 @@ onMounted(async () => {
             <h1 class="text-2xl font-bold">My Projects</h1>
         </template>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <UCard v-for="project in projects" :key="project.id" class="shadow-lg">
-                <template #header>
+            <UCard v-for="project in projects" :key="project.id" :ui="{body:'p-0 relative md:p-0 px-0',header:''}" class="shadow-lg ">
+                    <img :src="project.owner.avatar_url" alt="Project Avatar" class="  object-cover w-full h-48 rounded-t-lg">
+                    <div>
+                      <UBadge
+                        :label="project.language || 'Unknown'"
+                        :color="project.language ? 'primary' : 'gray'"
+                        variant="subtle"
+                        class="absolute top-2 right-2 text-xs px-2 py-1 rounded"
+                        />
+
+                        <UBadge
+                            v-if="project.topics && project.topics.length"
+                            :label="project.topics.join(', ')"
+                            class="absolute bottom-2 left-2  text-xs px-2 py-1 rounded"
+                        />
+                    </div>
+                <template #footer>
                     <h2 class="text-xl font-bold">{{ project.name }}</h2>
-                </template>
                 <p class="text-sm text-gray-600">{{ project.description || 'No description available' }}</p>
-                <div class="mt-2">
+                <div class="mt-2 flex justify-between items-center">
+
                     <UButton
                         variant="solid"
-                        color="primary"
+                        color="neutral"
+                        :icon="'i-uil-github'"
                         :href="project.html_url"
                         target="_blank"
                         label="View on GitHub"
                     />
+                    <UButton
+                        v-if="project.homepage"
+                        variant="outline"
+                        color="neutral"
+                        icon='i-lucide-external-link'
+                        :href="project.homepage"
+                        target="_blank"
+                        label="Visit Project"
+                    />
                 </div>
+                </template>
             </UCard>
         </div>
     </UCard>
@@ -71,22 +97,36 @@ onMounted(async () => {
         <template #header>
             <h1 class="text-2xl font-bold">Latest Articles</h1>
         </template>
-        <div class="space-y-4">
-            <UCard v-for="article in articles" :key="article.title" class="shadow-lg">
-                <template #header>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <UCard v-for="article in articles" :key="article.title" :ui="{body:'p-0 relative md:p-0 px-0',header:''}" class="shadow-lg ">
+                <img src="/images/test.jpg" alt="Article Image" class="object-cover w-full h-48 rounded-t-lg">
+                <div>
+                    <UBadge
+                        label="Article"
+                        color="neutral"
+                        variant="subtle"
+                        class="absolute top-2 right-2 text-xs px-2 py-1 rounded"
+                    />
+                </div>
+                <UBadge variant="solid" color="neutral" class="absolute bottom-2 left-2 text-xs px-2 py-1 rounded  bg-opacity-75">
+                    {{ new Date().toLocaleDateString() }}
+                </UBadge>
+                
+                <template #footer>
                     <h2 class="text-xl font-bold">{{ article.title }}</h2>
-                </template>
                 <p class="text-sm text-gray-600">{{ article.description }}</p>
                 <div class="mt-2">
                     <UButton
-                        variant="solid"
+                        variant="ghost"
+                        trailing-icon="i-heroicons-arrow-right-solid"
                         color="primary"
                         :href="article.link"
                         target="_blank"
                         label="Read Article"
                     />
                 </div>
-            </UCard>
+                </template>
+                                          </UCard>
         </div>
         </UCard> 
 </UCard> 

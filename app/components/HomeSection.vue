@@ -57,22 +57,12 @@ onMounted(() => {
       <p class="text-lg sm:text-xl md:text-2xl  mb-8">
         I am a passionate web developer, writer, and designer.
       </p>
-      <div class="flex justify-center space-x-4">
-        <UButton
-          color="neutral"
-          variant="solid"
-          href="#about"
-        >
-          About Me
-        </UButton>
-        <UButton
-          color="secondary"
-          variant="outline"
-          href="#portfolio"
-        >
-          My Portfolio
-        </UButton>
-        </div>
+      <UButton label="Get in Touch"
+        color="neutral"
+        variant="solid"
+        href="#contact"
+        class="px-6 py-3 text-lg sm:text-xl md:text-2xl font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
+      />
     </div>
 <UTooltip
       text="Scroll down to learn more"

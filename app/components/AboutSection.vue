@@ -12,21 +12,23 @@
     <div class="flex justify-center items-center w-full md:w-1/2 p-4">
                 <img src="/images/face.jpg" alt="About Me" class="w-96 h-auto hover:grayscale rounded-lg shadow-lg">
         </div>       
-    <div class="container mx-auto md:w-1/2 px-4">
-            <h2 class="text-3xl font-bold underline  mb-6">Who am I?</h2>
-            <p class="text-lg mb-4">
-                I am a passionate web developer with a focus on creating beautiful and functional websites.
-                My journey in web development started with a curiosity about how websites work, and it has grown into a full-fledged career.
-                I love coding, learning new technologies, and sharing my knowledge with others.
-            </p>
-            <p class="text-lg mb-4">
-                In my free time, I enjoy exploring new programming languages, contributing to open-source projects, and writing technical articles.
-                I believe in continuous learning and strive to improve my skills every day.
-            </p>
-            <p class="text-lg mb-4">
-                If you're interested in collaborating or just want to chat about web development, feel free to reach out!
-            </p>
-            
+    <div class="container mx-auto md:w-1/2 text-center px-4">
+        <h2 class="text-3xl font-bold mb-4">Hello, I'm Shadrack Odielo</h2>
+        <p class="text-lg mb-4">
+            I'm a passionate web developer with a love for creating beautiful and functional websites. 
+            With a background in computer science and a keen eye for design, I strive to deliver exceptional user experiences.
+        </p>
+        <p class="text-lg mb-4">
+            I specialize in front-end development, crafting responsive and accessible interfaces that engage users across all devices. 
+            My goal is to bring your ideas to life with clean, efficient code and a focus on performance.
+        </p>
+        <p class="text-lg mb-4">
+            When I'm not coding, you can find me exploring the latest web technologies, contributing to open-source projects, or sharing my knowledge through blogging and speaking engagements.
+        </p>
+        <p class="text-lg mb-4">
+            Let's work together to create something amazing! Feel free to reach out to me via the contact form or connect with me on social media.
+        </p>
+            <UButton color="neutral" variant="solid" href="#contact" class="mt-4"/>
         </div>
         
 </UCard> 

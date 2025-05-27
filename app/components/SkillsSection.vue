@@ -37,9 +37,7 @@ const skillIcons =
                 />
         </div></UCard>
         <UCard class="w-full ring-0" >
-            <template #header>
                 <h1>Tools I use</h1>
-            </template>
             <div class="flex flex-wrap justify-center items-center gap-4">
                 
                 <UTooltip
