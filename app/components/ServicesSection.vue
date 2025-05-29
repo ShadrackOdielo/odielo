@@ -34,8 +34,8 @@ const jobs = [
         </div>
         </template> 
            <UCard v-for="service in jobs" :key="service.title" variant="subtle" class=" flex flex-col hover:bg-accented  items-center  text-center h-full shadow-lg">
-            <UButton  variant="solid" :icon="service.icon" color="neutral" class="text-4xl mb-2 " />
-            <h2 class="text-2xl font-bold underline mb-2">{{ service.title }}</h2>
+            <UButton  variant="solid" :icon="service.icon" color="secondary" class="text-4xl mb-2 " />
+            <h2 class="text-2xl font-bold text-secondary mb-2">{{ service.title }}</h2>
                 <p class="text-lg">{{ service.description }}</p>
             </UCard>
 </UCard> 

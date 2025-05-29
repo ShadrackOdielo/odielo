@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AppHeader from '~/components/AppHeader.vue';
 
  useHead({
     title: 'Shadrack Odielo - Web Developer, Writer, Designer',
@@ -15,10 +14,9 @@ import AppHeader from '~/components/AppHeader.vue';
 </script>
 <template>
     <div class="w-screen overscroll-none scroll-smooth">
-        <AppHeader />
+        <!-- <AppHeader /> -->
+        <NavbarMenu />
         <slot />
-        <footer class="flex items-center justify-center p-4 bg-gray-800 text-white">
-            <p>&copy; 2025 My Website. All rights reserved.</p>
-        </footer>
+        <AppFooter />
     </div>
 </template>

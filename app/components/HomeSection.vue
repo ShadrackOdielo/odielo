@@ -39,41 +39,74 @@ onMounted(() => {
 
 <template>
   <section
-    id="home"
-    class="relative w-full h-screen bg-[url(/images/test.jpg)]  bg-cover bg-no-repeat top-0 flex flex-col items-center justify-center  px-4 text-center"
-  ><div class="absolute flex flex-col items-center justify-center text-center inset-0 backdrop-brightness-50 backdrop-blur-sm">
+    id="hero"
+    class="relative ring border-b  w-full h-screen dark:bg-[url(/images/homeblk.jpg)] bg-gradient-to-br from-neutral-50 via-secondary-50/30 to-accent-100/20  dark:bg-contain  dark:bg-black bg-no-repeat top-0 flex flex-col items-center justify-center  px-4 text-center"
+  ><div class="absolute flex flex-col items-center justify-center text-center inset-0 dark:backdrop-brightness-50 ">
     <div class=" p-6 rounded-lg max-w-xl  w-full">
-      <img
-        src="/images/home.jpg"
-        alt="Shadrack Odielo"
-        class="w-24 h-24  rounded-full grayscale  mx-auto mb-4 ring-4 ring-bg  shadow-lg"
-      >
+      <h1 class="text-4xl sm:text-5xl md:text-6xl   mb-4">
+        Hi, I'm
+      </h1>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold  mb-4">
         Shadrack Odielo
       </h1>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-6">
-        <span>{{ currentText }}</span><span class="border-r-2 border-white animate-pulse ml-1"/>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium  mb-6">
+        <span>and I'm a </span><span class="text-secondary">{{ currentText }}</span><span class="border-r-2  animate-pulse ml-1"/>
       </h2>
       <p class="text-lg sm:text-xl md:text-2xl  mb-8">
-        I am a passionate web developer, writer, and designer.
+        Welcome to my page.
       </p>
-      <UButton label="Get in Touch"
-        color="neutral"
-        variant="solid"
-        href="#contact"
-        class="px-6 py-3 text-lg sm:text-xl md:text-2xl font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
-      />
+      <div class="flex flex-col items-center " >
+        <UButtonGroup>
+          <UButton
+            variant="ghost"
+            color="neutral"
+            icon="i-uil-github"
+            href="https://github.com/ShadrackOdielo"
+            target="_blank"
+            />
+          <UButton
+            variant="ghost"
+            icon="i-uil-linkedin"
+            color="neutral"
+            href="https://www.linkedin.com/in/shadrack-odielo-30258a212/"
+            target="_blank"
+            />
+          <UButton
+            variant="ghost"
+            color="neutral"
+            icon="i-uil-behance"
+            href="https://www.behance.net/shadrackodielo"
+            target="_blank"
+            />
+          
+        </UButtonGroup>
+        <div class="flex flex-row items-center justify-center mt-4">
+        <UButton
+          color="secondary"
+          variant="solid"
+          to="/#about"
+          label="learn more"
+        />
+        <UButton
+          color="neutral"
+         label="Portfolio"
+          variant="outline"
+          class="ml-4"
+          href="/#portfolio"
+          icon="i-heroicons-briefcase-solid"
+        />
+          </div>
+      </div>
     </div>
-<UTooltip
-      text="Scroll down to learn more"
-      placement="top">
+      
     <UButton
-      icon="i-heroicons-arrow-down-solid"
+      icon="i-heroicons-chevron-down-solid"
       class="absolute bottom-4 rounded-full animate-bounce"
       color="neutral"
       variant="ghost"
       href="#about"
-    /></UTooltip>
+
+    />
     </div>
   </section>
 </template>

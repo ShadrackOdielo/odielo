@@ -1,9 +1,28 @@
 <script setup>
+import { UTooltip } from '#components'
 import { onMounted, onUnmounted } from 'vue'
 
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+const visible = ref(false)
+const threshold = 100 // Adjust this value to control when the button appears
+
+function onScroll() {
+	visible.value = window.scrollY > threshold
+}
+
+onMounted(() => {
+	window.addEventListener('scroll', onScroll)
+})
+
+onBeforeUnmount(() => {
+	window.removeEventListener('scroll', onScroll)
+})
 onMounted(() => {
   const scrollProgress = document.querySelector('.scroll-top__progress')
-  // check of there is progress before makin element visible
+  // check if scrollProgress is null 
+
   
   
   const updateProgress = () => {
@@ -17,21 +36,24 @@ onMounted(() => {
     }
   }
 
-  window.addEventListener('scroll', updateProgress)
+  window.addEventListener('scroll', updateProgress, )
   updateProgress()
 
   onUnmounted(() => window.removeEventListener('scroll', updateProgress))
 })
 </script>
 <template>
-  <a class="scroll-top z-99  " href="#">
+  <div v-show="visible" class="scroll-top z-99" aria-label="Scroll to top" @click="scrollTop">
     <!-- Here you can place an icon, for example -->
-    <UIcon name="i-heroicons-arrow-up-solid" class="text-2xl" />
+     <UTooltip
+      text="Scroll to top"
+      placement="left">
+    <UIcon  name="i-heroicons-chevron-up-solid" class="text-2xl" /></UTooltip>
     <svg class="scroll-top__circle" viewBox="0 0 40 40">
       <!-- Half of the thickness of the circle must be subtracted from the radius, otherwise the graphic will be cut off -->
       <circle class="scroll-top__progress" cx="20" cy="20" r="18"/>
     </svg>
-  </a>
+  </div>
 </template>
 <style scoped>
 
